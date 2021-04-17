@@ -3,13 +3,13 @@
 ### server
 ```sh
 $ cd server
-$ npm i
 $ cp .env.example .env
-$ npm run dev
+$ npm i && npm run dev
 ```
 
 ### client
 ``sh
 $ cd client
+$ cp .env.example .env
 $ yarn install && yarn start
 ```
