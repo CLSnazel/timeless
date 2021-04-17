@@ -47,8 +47,14 @@ void AlarmArray::insert_alarm(String id, int minute, int hour, bool active, int 
 
 void AlarmArray::delete_alarm(String id) {
   for(int i = 0; i < total_alarms; i++) {
-    if(alarms[i].get_id() = id) {
-      
+    if(alarms[i].get_id() == id) {
+      for(int j = i; j < total_alarms - 1; j++){
+        alarms[j] = alarms[j + 1];
+      }
+      total_alarms--;
+      break;
+    } else if (i == total_alarms - 1) {
+      Serial.println('No alarm with that id found');
     }
   }
 }

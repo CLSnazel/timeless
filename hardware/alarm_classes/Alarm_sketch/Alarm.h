@@ -47,6 +47,8 @@ class Alarm {
 
     void print();
     float get_alarm_float();
+
+    String get_id();
 };
 
 #endif

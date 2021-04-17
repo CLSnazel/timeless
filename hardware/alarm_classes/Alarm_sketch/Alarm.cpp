@@ -79,3 +79,7 @@ void Alarm::print(){
 float Alarm::get_alarm_float() {
   return float(float(hour)+(float(minute)/60.00));
 }
+
+String Alarm::get_id() {
+  return this->id;
+}

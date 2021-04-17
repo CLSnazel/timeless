@@ -24,6 +24,9 @@ void loop() {
   add_random_alarm();
   allAlarms.print_alarms();
   Serial.println("==================");
+  if (id_count > 10) {
+    remove_random_alarm();
+  }
   // Serial.println("hello");
   delay(4000);
 }
@@ -34,4 +37,10 @@ void add_random_alarm() {
   int hour = random(0,24);
   allAlarms.insert_alarm(id, minute , hour, true, 0, 0);
   id_count += 1;
+}
+
+void remove_random_alarm() {
+  int random_id = random(0, id_count);
+  Serial.println("Remove id:"+String(random_id));
+  allAlarms.delete_alarm(String(random_id));
 }
