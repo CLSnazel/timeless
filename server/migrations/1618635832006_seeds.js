@@ -9,7 +9,7 @@ exports.up = pgm => {
   INSERT INTO users (username) VALUES ('Chantal');
   INSERT INTO users (username) VALUES ('Meg');
   
-  INSERT INTO sounds (name, public) VALUES ('bird', true);
+  INSERT INTO sounds (name, is_public) VALUES ('bird', true);
 
   INSERT INTO alarms (time, user_id, sound_id, snooze_repeat_times, snooze_length, silence_after, monday, tuesday, wednesday) VALUES ('06:00', 1, 1, 3, 5, 10, true, true, true);
   INSERT INTO alarms (time, user_id, sound_id, snooze_repeat_times, snooze_length, silence_after) VALUES ('07:00', 2, 1, 3, 5, 10);

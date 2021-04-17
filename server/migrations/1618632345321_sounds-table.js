@@ -16,7 +16,7 @@ exports.up = pgm => {
     source: {
       type: 'VARCHAR(256)'
     },
-    public: {
+    is_public: {
       type: 'BOOLEAN',
       default: false
     }
