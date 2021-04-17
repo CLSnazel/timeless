@@ -1,7 +1,7 @@
-const fastifyPostgres = require('fastify-postgres')
+const fastifySlonik = require('@autotelic/fastify-slonik')
 
-fastifyPostgres.autoConfig = {
+fastifySlonik.autoConfig = {
   connectionString: process.env.DATABASE_URL
 }
 
-module.exports = fastifyPostgres
+module.exports = fastifySlonik
