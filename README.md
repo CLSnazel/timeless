@@ -3,8 +3,11 @@
 ### server
 ```sh
 $ cd server
-$ cp .env.example .env
-$ npm i && npm run dev
+$ cp .envrc.example .envrc
+$ npm i
+$ docker-compose up -d
+$ npm run migrate up
+$ npm run dev
 ```
 
 ### client
