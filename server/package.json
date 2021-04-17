@@ -18,6 +18,7 @@
     "fastify-cli": "^2.8.0",
     "fastify-cors": "^5.2.0",
     "fastify-plugin": "^3.0.0",
+    "lodash": "^4.17.21",
     "node-pg-migrate": "^5.9.0",
     "pg": "^8.6.0"
   },
