@@ -9,6 +9,9 @@ exports.up = pgm => {
       primaryKey: true,
       notNull: true
     },
+    time: {
+      type: 'TIME'
+    },
     user_id: {
       type: 'INTEGER',
       references: 'users(id)',
