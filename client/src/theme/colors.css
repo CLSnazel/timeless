@@ -1,0 +1,27 @@
+/* /these are only the ones I changed */
+:root {
+    
+--red-dark: #B3241B;
+--red: #CC5149;
+--red-light: #E6A5A1;
+--red-lightest: #FEF6F6;
+
+--orange-dark:#DB5720;
+--orange: #E08159;
+
+--yellow-dark: #A67F4B;
+--yellow: #D9A662;
+--yellow-light: #FBE6A2;
+--yellow-lightest: #FEF8E7;
+
+--blue-dark: #353B45;
+--blue: #596373;
+--blue-light: #94A4BF;
+--blue-lightest: #F6F9FD;
+
+--purple-dark: #401319;
+--purple: #733942;
+--purple-light: #BF606C;
+--purple-lightest: #FFF5F7;
+
+}
