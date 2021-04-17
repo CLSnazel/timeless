@@ -8,7 +8,7 @@ $ npm i && npm run dev
 ```
 
 ### client
-``sh
+```sh
 $ cd client
 $ cp .env.example .env
 $ yarn install && yarn start
