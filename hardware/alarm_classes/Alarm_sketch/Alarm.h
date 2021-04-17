@@ -1,7 +1,8 @@
-#include <string>
-
 #ifndef ALARM_H
 #define ALARM_H
+
+//#include <Serial.h>
+#include <Arduino.h>
 
 class Alarm {
   private:
@@ -11,6 +12,10 @@ class Alarm {
     bool active;
     int snooze_repeat_times;
     int snooze_minutes;
+    void printId();
+    void printMinute();
+    void printHour();
+    void printActive();
     // int repeat_days;
     // int sound;
     // int volume;
@@ -24,6 +29,7 @@ class Alarm {
     void update_active (bool new_active);
     void update_snooze_repeat_times (int new_snooze_repeat);
     void update_snooze_minutes (int new_snooze_minutes);
+    void print();
 };
 
 #endif
