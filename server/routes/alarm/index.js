@@ -3,7 +3,31 @@ const alarmRoutes = async (fastify) => {
   const { dbQuery } = fastify
   fastify.get('/alarm/all', async (req, reply) => {
     const { rows } = await dbQuery.getAllAlarms()
-    reply.send(rows)
+    const sortedAlarms = []
+    for (const row of rows) {
+      const { active, device_ip, email, friday, monday, name, password, is_public, saturday, silence_after, snooze_length, snooze_repeat_times, sound_id, source, sunday, thursday, time, tuesday, user_id, username, wednesday } = row
+    
+      const alarm = {
+        active,
+        silenceAfter: silence_after,
+        snoozeLength: snooze_length,
+        snoozeRepeatTimes: snooze_repeat_times,
+        time
+      }
+      const daysActive = [
+        { day: 'Monday', active: monday },
+        { day: 'Tuesday', active: tuesday },
+        { day: 'Wednesday', active: wednesday },
+        { day: 'Thursday', active: thursday },
+        { day: 'Friday', active: friday },
+        { day: 'Saturday', active: saturday },
+        { day: 'Sunday', active: sunday },
+      ]
+      const sound = { id: sound_id, name, source, isPublic: is_public }
+      const user = { id: user_id, username, email, password, deviceIp: device_ip }
+      sortedAlarms.push({ alarm, daysActive, sound, user })
+    }
+    reply.send(sortedAlarms)
   })
 
   fastify.post('/alarm/new', async (req, reply) => {
@@ -54,13 +78,13 @@ const alarmRoutes = async (fastify) => {
       time
     }
     const daysActive = [
-      { day: 'monday', active: monday },
-      { day: 'tuesday', active: tuesday },
-      { day: 'wednesday', active: wednesday },
-      { day: 'thursday', active: thursday },
-      { day: 'friday', active: friday },
-      { day: 'saturday', active: saturday },
-      { day: 'sunday', active: sunday },
+      { day: 'Monday', active: monday },
+      { day: 'Tuesday', active: tuesday },
+      { day: 'Wednesday', active: wednesday },
+      { day: 'Thursday', active: thursday },
+      { day: 'Friday', active: friday },
+      { day: 'Saturday', active: saturday },
+      { day: 'Sunday', active: sunday },
     ]
     const sound = { id: sound_id, name, source, isPublic: is_public }
     const user = { id: user_id, username, email, password, deviceIp: device_ip }
