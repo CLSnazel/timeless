@@ -1,12 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import 'theme/index.css';
+import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
+import smoothScrollPolyfill from 'smoothscroll-polyfill';
 import App from 'components/App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import 'theme/index.css'
 
+smoothScrollPolyfill.polyfill();
+
+render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);

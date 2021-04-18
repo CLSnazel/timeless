@@ -1,13 +1,16 @@
-import 'theme/App.css';
+import React, { Suspense } from 'react'
+import { Switch, Route } from 'react-router-dom';
+import { Spinner } from 'evergreen-ui'
+import Root from 'components/Root';
 
-function App() {
+import 'theme/App.css'
+
+export default function App () {
   return (
-    <div className="App">
-      <header className="App-header">
-        TIMELESS!
-      </header>
-    </div>
-  );
+    <Suspense fallback={<Spinner />}>
+      <Switch>
+        <Route component={Root} />
+      </Switch>
+    </Suspense>
+  )
 }
-
-export default App;
