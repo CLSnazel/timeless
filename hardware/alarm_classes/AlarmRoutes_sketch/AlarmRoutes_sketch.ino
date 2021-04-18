@@ -1,6 +1,7 @@
 #include "WiFi.h"
 #include "ESPAsyncWebServer.h"
 #include "Config.h"
+#include "AlarmRoutes.h"
 const char* ssid = wifi_name;
 const char* password =  wifi_password;
  
@@ -25,12 +26,12 @@ void setup() {
     NULL,
     [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
  
-      for (size_t i = 0; i < len; i++) {
-        Serial.write(data[i]);
-      }
+      // for (size_t i = 0; i < len; i++) {
+      //   Serial.write(data[i]);
+      // }
  
-      Serial.println();
- 
+      // Serial.println();
+      alarm_from_body(data, len);
       request->send(204);
   });
  
