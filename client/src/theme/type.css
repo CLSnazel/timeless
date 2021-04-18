@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+*{
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* TEXT STYLES */
+
+h1 {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 40px;
+    /* identical to box height, or 114% */
+    
+    letter-spacing: -0.24px;
+    
+    /* text/dark */
+    
+    color: #161719;
+}
+
+h2 {
+    /* Heading/800 */
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 29px;
+    line-height: 32px;
+    /* identical to box height, or 110% */
+
+    letter-spacing: -0.241667px;
+
+    /* text/dark */
+
+    color: #161719;
+}
+
+h3 {
+    /* Heading/700 */
+
+font-family: DM Sans;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+/* identical to box height, or 117% */
+
+letter-spacing: -0.06px;
+
+/* text/dark */
+
+color: #161719;
+}
+
+h4 {
+    /* Heading/600 */
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 120% */
+
+    letter-spacing: -0.0555556px;
+
+    /* text/dark */
+
+    color: #161719;
+}
+
+h5 {
+    /* Heading/500(default) */
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+
+    letter-spacing: -0.05px;
+
+    /* text/dark */
+
+    color: #161719;
+}
+
+h6 {
+    /* Heading/400 */
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: -0.05px;
+
+    /* text/dark */
+
+    color: #161719;
+}
+
+p {
+    /* Text/400/default */
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: -0.05px;
+
+    /* text/default */
+    color: #161719;
+
+}
+
+a {
+    /* Link/400 */
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: -0.05px;
+    text-decoration-line: underline;
+
+    /* blue/base */
+
+    color: #596373;
+}
+
+strong {
+    font-weight: 700;
+}
+
+small {
+    /* Heading/200 */
+
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    /* text/muted */
+    color: #778399;
+}
+
+code {
+    /* Mono/300 */
+
+    font-family: 'JetBrains Mono', monospace;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    /* or 133% */
+
+    /* text/default */
+    color: #161719;
+
+}
+
+/*A h2 element by default.*/
+Heading {
+}
+
+/*A span element by default.*/
+Text {
+    /* Text/400/default */
+    font-family: DM Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    letter-spacing: -0.05px;
+
+    /* text/default */
+
+    color: #161719;
+}
+
+span {
+
+}
