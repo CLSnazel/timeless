@@ -23,3 +23,7 @@ To run the AlarmRoutes sketch, please copy Config example.cpp and fill in your w
 ```ssh
 $ cp Config_example.cpp Config.cpp
 ```
+Other libraries that are required:
+- [ArduinoJson](https://arduinojson.org/)
+- [ESP32AsyncWebServer](https://github.com/me-no-dev/ESPAsyncWebServer)
+- [AsyncTCP](https://github.com/me-no-dev/AsyncTCP) (for use of ESP32AsyncWebServer)
