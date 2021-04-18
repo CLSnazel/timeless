@@ -26,7 +26,9 @@ void AlarmServer::post_alarm() {
     [](AsyncWebServerRequest * request){},
     NULL,
     [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
+      Serial.println("======");
       Serial.println("POST");
+      Serial.println("======");
       route_alarms.insert_from_json(data);
       request->send(204);
     }
@@ -40,7 +42,9 @@ void AlarmServer::edit_alarm() {
     [](AsyncWebServerRequest * request){},
     NULL,
     [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
+      Serial.println("======");
       Serial.println("PUT");
+      Serial.println("======");
       route_alarms.edit_from_json(data);
       request->send(204);
   });
@@ -53,7 +57,9 @@ void AlarmServer::delete_alarm() {
     [](AsyncWebServerRequest * request){},
     NULL,
     [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
+      Serial.println("======");      
       Serial.println("Delete");
+      Serial.println("======");
       route_alarms.delete_alarm(data);
       request->send(204);
   });

@@ -71,6 +71,7 @@ void AlarmArray::delete_alarm(String id) {
       Serial.println("Delete: No alarm with that id found");
     }
   }
+  print_alarms();
 }
 
 void AlarmArray::delete_alarm(uint8_t *data) {
