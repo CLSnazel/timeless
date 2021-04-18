@@ -2,6 +2,7 @@
 #define ALARM_ARRAY_H
 
 #include "Alarm.h"
+#include "ArduinoJson.h"
 
 class AlarmArray {
   private:
@@ -15,8 +16,11 @@ class AlarmArray {
     bool is_full();
     void print_alarms();
     void insert_alarm(String id, int minute, int hour, bool active, int snooze_repeat_times, int snooze_minutes);
+    void insert_from_json(uint8_t *data);
     void delete_alarm(String id);
-    void edit_alarm();
+    void delete_alarm(uint8_t *data);
+    // void edit_alarm();
+    void edit_from_json(uint8_t *data, size_t len);
     void snooze_alarm();
     void stop_alarm();
 };

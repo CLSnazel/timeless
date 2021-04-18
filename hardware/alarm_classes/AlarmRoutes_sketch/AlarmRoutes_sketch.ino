@@ -5,7 +5,9 @@
 const char* ssid = wifi_name;
 const char* password =  wifi_password;
  
-AsyncWebServer server(80);
+// AsyncWebServer server(80);
+// AlarmServer Server = AlarmServer();
+AlarmServer Server;
  
 void setup() {
   Serial.begin(115200);
@@ -18,24 +20,8 @@ void setup() {
   }
  
   Serial.println(WiFi.localIP());
- 
-  server.on(
-    "/post",
-    HTTP_POST,
-    [](AsyncWebServerRequest * request){},
-    NULL,
-    [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
- 
-      // for (size_t i = 0; i < len; i++) {
-      //   Serial.write(data[i]);
-      // }
- 
-      // Serial.println();
-      alarm_from_body(data, len);
-      request->send(204);
-  });
- 
-  server.begin();
+  Server.init_routes();
+  Server.server.begin();
 }
  
 void loop() {}

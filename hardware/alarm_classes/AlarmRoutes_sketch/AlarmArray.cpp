@@ -1,4 +1,5 @@
 #include "AlarmArray.h"
+#include "ArduinoJson.h"
 // #include <ESP32Time.h>
 
 AlarmArray::AlarmArray() {
@@ -43,7 +44,20 @@ void AlarmArray::insert_alarm(String id, int minute, int hour, bool active, int 
   }
 }
 
-// void AlarmArray::edit_alarm()
+void AlarmArray::insert_from_json(uint8_t *data) {
+  StaticJsonDocument<384> body;
+  deserializeJson(body, (char *)data);
+  if(!is_full()) {
+    String id = body["id"];
+    int minute = int(body["minute"]);
+    int hour = int(body["hour"]);
+    alarms[total_alarms] = Alarm(id, minute, hour);
+    total_alarms ++;
+    sort_alarms();
+    // print_alarms();
+  }
+  return;
+}
 
 void AlarmArray::delete_alarm(String id) {
   for(int i = 0; i < total_alarms; i++) {
@@ -57,4 +71,12 @@ void AlarmArray::delete_alarm(String id) {
       Serial.println('No alarm with that id found');
     }
   }
+}
+
+void AlarmArray::delete_alarm(uint8_t *data) {
+  StaticJsonDocument<384> body;
+  deserializeJson(body, (char *)data);
+  String id = body["id"];
+  delete_alarm(id);
+  return;
 }

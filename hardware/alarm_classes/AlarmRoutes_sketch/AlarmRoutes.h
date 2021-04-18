@@ -9,7 +9,18 @@
 #include "ArduinoJson.h"
 
 Alarm alarm_from_body(uint8_t *data, size_t len);
-// extern AlarmArray route_alarms = AlarmArray();
-// extern AsyncWebServer  server(80);
+
+
+class AlarmServer{
+  private:
+    void edit_alarm();
+    void post_alarm();
+    void delete_alarm();
+    void not_found();
+  public:
+    AlarmServer();
+    void init_routes();
+    AsyncWebServer server = AsyncWebServer(80);
+};
 
 #endif
