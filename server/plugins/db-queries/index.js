@@ -20,7 +20,11 @@ async function databaseQueries (fastify) {
     getAllAlarms: async () => {
       return slonik.query(sql`
         SELECT *
-        FROM alarms;
+        FROM alarms
+        INNER JOIN sounds
+        ON (alarms.sound_id = sounds.id)
+        INNER JOIN users
+        ON (alarms.user_id = users.id);
       `)
     },
     getAlarm: async (id) => {

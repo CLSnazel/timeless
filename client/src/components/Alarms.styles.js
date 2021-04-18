@@ -5,7 +5,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background: #FB7F5A;
   margin: 0;
@@ -16,6 +16,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   min-height: 50%;
   width: 70%;
+  margin: 2em;
 `
 
 export const FormHeader = styled.div`
