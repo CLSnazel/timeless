@@ -20,7 +20,7 @@ class AlarmArray {
     void delete_alarm(String id);
     void delete_alarm(uint8_t *data);
     // void edit_alarm();
-    void edit_from_json(uint8_t *data, size_t len);
+    void edit_from_json(uint8_t *data);
     void snooze_alarm();
     void stop_alarm();
 };

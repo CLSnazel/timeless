@@ -54,7 +54,7 @@ void AlarmArray::insert_from_json(uint8_t *data) {
     alarms[total_alarms] = Alarm(id, minute, hour);
     total_alarms ++;
     sort_alarms();
-    // print_alarms();
+    print_alarms();
   }
   return;
 }
@@ -68,7 +68,7 @@ void AlarmArray::delete_alarm(String id) {
       total_alarms--;
       break;
     } else if (i == total_alarms - 1) {
-      Serial.println('No alarm with that id found');
+      Serial.println("Delete: No alarm with that id found");
     }
   }
 }
@@ -79,4 +79,22 @@ void AlarmArray::delete_alarm(uint8_t *data) {
   String id = body["id"];
   delete_alarm(id);
   return;
+}
+
+void AlarmArray::edit_from_json(uint8_t *data){
+  StaticJsonDocument<384> body;
+  deserializeJson(body, (char *)data);
+  String id = body["id"];
+  for(int i = 0; i < total_alarms; i++) {
+    if(alarms[i].get_id() == id) {
+      int minute = int(body["minute"]);
+      int hour = int(body["hour"]);
+      alarms[i] = Alarm(id, minute, hour);
+      sort_alarms();
+      break;
+    } else if (i == (total_alarms - 1)) {
+      Serial.println("Edit: No alarm with that id found");
+    }
+  }
+  print_alarms();
 }

@@ -41,7 +41,7 @@ void AlarmServer::edit_alarm() {
     NULL,
     [](AsyncWebServerRequest * request, uint8_t *data, size_t len, size_t index, size_t total) {
       Serial.println("PUT");
-      // alarm_from_body(data, len);
+      route_alarms.edit_from_json(data);
       request->send(204);
   });
 }
