@@ -174,10 +174,6 @@ code {
 
 }
 
-/*A h2 element by default.*/
-Heading {
-}
-
 /*A span element by default.*/
 Text {
     /* Text/400/default */
@@ -192,8 +188,4 @@ Text {
     /* text/default */
 
     color: #161719;
-}
-
-span {
-
 }
